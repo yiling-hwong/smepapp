@@ -1,0 +1,43 @@
+<!doctype html>
+<body>
+<title>SMEP</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+
+
+
+    <form method="POST" action="/">
+
+
+
+        <label class="instructions" for="sm-post">Enter your social media text here:</label><br>
+        <textarea id="post" name="user_sm_post" maxlength="2000" wrap="hard" rows="10" cols="80" required ></textarea>
+    <br>
+
+
+
+        <div class="inline-field">
+            <input type="checkbox" id="media_checkbox" name="has_media" value="media">
+            <label for="media_checkbox">Check this box if your post contains media elements (e.g., photo, video, animated GIF)<br></label>
+        </div>
+        <div class="inline-field">
+            <input type="checkbox" id="url_checkbox" name="has_url" value="url">
+            <label for="url_checkbox">Check this box if your post contains URL(s)<br></label>
+        </div>
+
+        <input class="instructions" type="submit">
+
+    </form>
+
+    {% if prediction_result and probability %}
+    <label class="results"><strong> SMEP predicts your post belongs to the {{ prediction_result}} class, with a probability of {{ probability }}%.</strong></label>
+    {% endif %}
+
+    {% if error %}
+    <label class="results"><strong>Error:</strong> {{ error }}</label>
+    {% endif %}
+
+</body>
+
+
+</html>
+
