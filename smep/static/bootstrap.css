@@ -58,6 +58,11 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   display: block;
 }
 
+@font-face{
+font-family: roboto-slab;
+src: url('/static/roboto-slab/RobotoSlab-Light.ttf');
+}
+
 body {
 
   display: block;
@@ -65,11 +70,13 @@ body {
   margin-right: auto;
   /*margin: 0 auto;*/
   max-width: 1060px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: roboto-slab, Arial, sans-serif;
+ /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #666666;
+  /*color: #212529;*/
   text-align: left;
   background-color: #fff;
 }
@@ -80,6 +87,17 @@ label.instructions, label.results, input.instructions{
   margin-left: auto;
   margin-right: auto;
 }
+
+.responsive {
+    width: 35%;
+    height: auto;
+    padding: 1.5em 0 3em 0;
+}
+
+#the-count {
+  font-size: 0.875rem;
+}
+
 
 .inline-field {
   display:block;
@@ -261,6 +279,7 @@ label {
 }
 
 button {
+
   border-radius: 0;
 }
 
@@ -294,8 +313,18 @@ button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button;
-  margin: 1em 1em 1em 0;
+
+   background-color: #4CAF50; /* Green */
+   border: none;
+   color: white;
+   padding: 1em 1.5em;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 1em;
+   cursor: pointer;
+   -webkit-appearance: button;
+   margin: 2em 2em 5em 2em;
 }
 
 button::-moz-focus-inner,
@@ -320,6 +349,7 @@ input[type="month"] {
 }
 
 textarea {
+  display:block;
   overflow: auto;
   resize: vertical;
     -webkit-box-sizing: border-box;
